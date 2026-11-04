@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project><Template>FPGA</Template><Version>5</Version>
+<Device name="GW5AT-60B" pn="GW5AT-LV60PG484AC1/I0">gw5at60b-002</Device><FileList>
+<File path="src/dds_core.v" type="file.verilog" enable="1"/>
+<File path="src/envelope_adsr.v" type="file.verilog" enable="1"/>
+<File path="src/envelope_adsr_live.v" type="file.verilog" enable="1"/>
+<File path="src/i2c_write_byte.v" type="file.verilog" enable="1"/>
+<File path="src/keypad_scan_m3_1.v" type="file.verilog" enable="1"/>
+<File path="src/note_to_phase_inc.v" type="file.verilog" enable="1"/>
+<File path="src/oled_font.v" type="file.verilog" enable="1"/>
+<File path="src/oled_status.v" type="file.verilog" enable="1"/>
+<File path="src/oled_status32.v" type="file.verilog" enable="1"/>
+<File path="src/oled_status_uart.v" type="file.verilog" enable="1"/>
+<File path="src/parallel_controls.v" type="file.verilog" enable="1"/>
+<File path="src/parallel_engine.v" type="file.verilog" enable="1"/>
+<File path="src/parallel_status.v" type="file.verilog" enable="1"/>
+<File path="src/parallel_voice.v" type="file.verilog" enable="1"/>
+<File path="src/performance_controls.v" type="file.verilog" enable="1"/>
+<File path="src/pitch_control.v" type="file.verilog" enable="1"/>
+<File path="src/pt8211_tx.v" type="file.verilog" enable="1"/>
+<File path="src/sine_rom.v" type="file.verilog" enable="1"/>
+<File path="src/status_uart.v" type="file.verilog" enable="1"/>
+<File path="src/synth_engine_bend.v" type="file.verilog" enable="1"/>
+<File path="src/synth_voice_bend.v" type="file.verilog" enable="1"/>
+<File path="src/twinlogic_audio_top_m4.v" type="file.verilog" enable="1"/>
+<File path="src/voice_manager.v" type="file.verilog" enable="1"/>
+<File path="constraints/m3_oled.cst" type="file.cst" enable="1"/>
+<File path="constraints/m3.sdc" type="file.sdc" enable="1"/></FileList></Project>

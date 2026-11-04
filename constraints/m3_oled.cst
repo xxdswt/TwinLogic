@@ -1,0 +1,60 @@
+//Copyright (C)2014-2026 Gowin Semiconductor Corporation.
+//All rights reserved. 
+//File Title: Physical Constraints file
+//Tool Version: V1.9.12.04 (64-bit)
+//Part Number: GW5AT-LV60PG484AC1/I0
+//Device: GW5AT-60
+//Device Version: B
+//Created Time: Mon 11 02 06:15:24 2026
+
+IO_LOC "pa_en" AB16;
+IO_PORT "pa_en" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "i2s_din" AA16;
+IO_PORT "i2s_din" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "i2s_lrck" AB17;
+IO_PORT "i2s_lrck" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "i2s_bclk" Y17;
+IO_PORT "i2s_bclk" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=8 BANK_VCCIO=3.3;
+IO_LOC "key2_n" Y12;
+IO_PORT "key2_n" IO_TYPE=LVCMOS15 PULL_MODE=UP BANK_VCCIO=1.5;
+IO_LOC "key0_n" AA13;
+IO_PORT "key0_n" IO_TYPE=LVCMOS15 PULL_MODE=UP BANK_VCCIO=1.5;
+IO_LOC "rst_n" AB13;
+IO_PORT "rst_n" IO_TYPE=LVCMOS15 PULL_MODE=UP BANK_VCCIO=1.5;
+IO_LOC "sys_clk" V22;
+IO_PORT "sys_clk" IO_TYPE=LVCMOS33 PULL_MODE=NONE BANK_VCCIO=3.3;
+
+
+
+// Measured keyboard order: keys 1,2,3,A,4,7,* => 88,84,82,81,48,28,18.
+// Same eight physical wires as keypad_probe. Keep wiring unchanged.
+// Rows R0..R3=P8,P7,P6,P5; columns C0..C3=P4,P3,P2,P1.
+// Active LOW row sinks; inactive rows Z. Column inputs use 3.3V pull-ups.
+IO_LOC "keypad_row_n[0]" A13;
+IO_PORT "keypad_row_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
+IO_LOC "keypad_col_n[0]" C14;
+IO_PORT "keypad_col_n[0]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_LOC "keypad_row_n[1]" A14;
+IO_PORT "keypad_row_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
+IO_LOC "keypad_col_n[1]" C15;
+IO_PORT "keypad_col_n[1]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_LOC "keypad_row_n[2]" C13;
+IO_PORT "keypad_row_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
+IO_LOC "keypad_col_n[2]" E13;
+IO_PORT "keypad_col_n[2]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+IO_LOC "keypad_row_n[3]" B13;
+IO_PORT "keypad_row_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4 BANK_VCCIO=3.3;
+IO_LOC "keypad_col_n[3]" E14;
+IO_PORT "keypad_col_n[3]" IO_TYPE=LVCMOS33 PULL_MODE=UP BANK_VCCIO=3.3;
+
+
+// Board debug UART, already verified on COM10 during keyboard diagnosis.
+IO_LOC "uart_tx" U15;
+IO_PORT "uart_tx" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=4 BANK_VCCIO=3.3;
+
+// J13: pin17=SDRAM0_D9=A21, pin18=SDRAM0_D8=B21; existing keyboard pins1..8 unchanged.
+// Open drain only. Internal pullups are a fallback, not proof of a suitable physical rise time.
+IO_LOC "oled_scl" B21;
+IO_PORT "oled_scl" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=4 BANK_VCCIO=3.3;
+IO_LOC "oled_sda" A21;
+IO_PORT "oled_sda" IO_TYPE=LVCMOS33 PULL_MODE=UP DRIVE=4 BANK_VCCIO=3.3;

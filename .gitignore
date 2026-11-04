@@ -1,0 +1,7 @@
+impl/
+.Xil/
+xsim.dir/
+*.wdb
+*.jou
+*.log
+*.fs
